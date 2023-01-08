@@ -15,13 +15,18 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.popov.watherforecastm2.R
 import com.popov.watherforecastm2.ui.theme.CardBackground
+import com.popov.watherforecastm2.viewmodels.MainViewModel
 
 @Preview(showBackground = true)
 @Composable
 fun Current() {
+    val viewModel: MainViewModel = viewModel()
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -39,7 +44,7 @@ fun Current() {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "20 Jun 2022 13:00",
+                    text = "",
                     style = TextStyle(fontSize = 15.sp),
                 )
                 AsyncImage(
